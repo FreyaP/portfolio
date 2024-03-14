@@ -1,9 +1,16 @@
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import ProjectPage from "./pages/ProjectPage/ProjectPage";
 
 function App() {
   return (
     <>
-      <h1>PORTFOLIO</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/:project" element={<ProjectPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
