@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import "./typography.scss";
 
 const GlobalStyles = createGlobalStyle`
+
 * {
     box-sizing: border-box;
 }
@@ -12,6 +13,8 @@ body {
     background-color: ${(props) => props.theme.background};
     color: ${(props) => props.theme.text}
 }
+
+
 
 `;
 
