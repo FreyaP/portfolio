@@ -1,0 +1,26 @@
+[
+  {
+    "title": "g&B contracting",
+    "description": "Description of g&B contracting.",
+    "slug": "g-and-b-contracting",
+    "images": ["/path/to/image1.jpg", "/path/to/image2.jpg"],
+    "logo": "/path/to/logo1.jpg",
+    "techStack": ["React", "Node.js", "MongoDB"]
+  },
+  {
+    "title": "sea to sky hotel",
+    "description": "Description of sea to sky hotel.",
+    "slug": "sea-to-sky-hotel",
+    "images": ["/path/to/image3.jpg", "/path/to/image4.jpg"],
+    "logo": "/path/to/logo2.jpg",
+    "techStack": ["Angular", "Express", "MongoDB"]
+  },
+  {
+    "title": "squamish events hub",
+    "description": "Description of squamish events hub.",
+    "slug": "squamish-events-hub",
+    "images": ["/path/to/image5.jpg", "/path/to/image6.jpg"],
+    "logo": "/path/to/logo3.jpg",
+    "techStack": ["Vue.js", "Express", "MongoDB"]
+  }
+]

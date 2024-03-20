@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import heroImage from "../assets/images/hero.jpg";
+import { Link } from "react-router-dom";
 
 const TitleStyles = styled.h1`
   text-transform: uppercase;
@@ -21,7 +22,9 @@ const SubTitleStyles = styled.h2`
 export default function Header() {
   return (
     <>
-      <TitleStyles>Freya Pearse</TitleStyles>
+      <Link to="/">
+        <TitleStyles>Freya Pearse</TitleStyles>
+      </Link>
       <SubTitleStyles>Web Developer</SubTitleStyles>
       <img src={heroImage} alt="Person sitting at laptop" />
     </>

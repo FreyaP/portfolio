@@ -36,6 +36,10 @@ const LightBulbStyles = styled.img`
   width: 5rem;
   height: 5rem;
   animation: ${swing} 6s linear infinite;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 // State for theme, function to toggle the theme. Rendered in App.jsx with all components as children.

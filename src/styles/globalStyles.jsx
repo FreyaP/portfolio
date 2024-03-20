@@ -14,12 +14,8 @@ body {
     color: ${(props) => props.theme.text}
 }
 a {
-    color: ${(props) => props.theme.text};
-    transition: transform 1s ease-in-out;
-}
-a:hover {
-   transform: rotate(360deg);
-    
+    text-decoration: none;
+    color: ${(props) => props.theme.text}
 }
 
 

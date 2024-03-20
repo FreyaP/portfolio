@@ -6,7 +6,7 @@ import ThemeProvider from "./components/ThemeProvider";
 import styled from "styled-components";
 
 const AppStyles = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
 `;
@@ -19,7 +19,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/:project" element={<ProjectPage />} />
+            <Route path="/projects/:slug" element={<ProjectPage />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

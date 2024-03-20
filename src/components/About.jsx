@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +12,14 @@ const IconContainerStyles = styled.section`
   width: 100%;
   justify-content: space-around;
   font-size: 2rem;
+`;
+const IconLinkStyles = styled.a`
+  color: ${(props) => props.theme.text};
+  transition: transform 1s ease-in-out;
+  &:hover {
+    transform: rotate(360deg);
+    cursor: pointer;
+  }
 `;
 const TaglineStyles = styled.h3`
   font-size: 3rem;
@@ -35,20 +42,32 @@ const DividerStyles = styled.div`
 export default function About() {
   return (
     <Container>
+      <LabelStyles>_aboutMe</LabelStyles>
       <IconContainerStyles>
-        <Link to="https://github.com/FreyaP/" target="_blank">
+        <IconLinkStyles
+          href="https://github.com/FreyaP/"
+          target="_blank"
+          rel="noopener nnoreferrer"
+        >
           <FaGithub />{" "}
-        </Link>
-        <Link to="mailto:freyapearse@gmail.com" target="_blank">
+        </IconLinkStyles>
+        <IconLinkStyles
+          href="mailto:freyapearse@gmail.com"
+          target="_blank"
+          rel="noopener nnoreferrer"
+        >
           <IoIosMail />{" "}
-        </Link>
-        <Link to="https://www.linkedin.com/in/freyapearse/" target="_blank">
+        </IconLinkStyles>
+        <IconLinkStyles
+          href="https://www.linkedin.com/in/freyapearse/"
+          target="_blank"
+          rel="noopener nnoreferrer"
+        >
           <FaLinkedin />
-        </Link>
+        </IconLinkStyles>
       </IconContainerStyles>
       <DividerStyles />
       <TaglineStyles>ABOUT ME TAGLINE... MAYBE A SENTENCE.</TaglineStyles>
-      <LabelStyles>_aboutMe</LabelStyles>
       <DividerStyles />
     </Container>
   );
