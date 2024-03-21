@@ -18,7 +18,7 @@ const ThumbnailContainer = styled.div`
 `;
 
 const TitleStyles = styled.h5`
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   font-weight: 900;
   text-transform: uppercase;
