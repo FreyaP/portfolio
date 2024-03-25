@@ -18,8 +18,6 @@ a {
     color: ${(props) => props.theme.text}
 }
 
-
-
 `;
 
 export default GlobalStyles;

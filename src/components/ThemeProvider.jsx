@@ -29,7 +29,8 @@ const swing = keyframes`
 const Container = styled.div`
   overflow: hidden;
   align-self: end;
-  position: absolute;
+  position: fixed;
+  z-index: 100;
 `;
 
 const LightBulbStyles = styled.img`

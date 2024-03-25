@@ -1,11 +1,17 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { desktop, smallScreen } from "../styles/breakpoints";
 
 const ContainerStyles = styled.article`
   width: 100%;
-  padding: 3rem;
-  //perspective: 1000px; //creates 3d out of the screen effect, smaller number bigger effect
+  padding: 3rem 1rem;
+  perspective: 800px; //creates 3d out of the screen effect, smaller number bigger
+  @media (min-width: ${desktop}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 `;
 
 const ThumbnailContainer = styled.div`
@@ -14,6 +20,12 @@ const ThumbnailContainer = styled.div`
   transition: transform 1s linear;
   &:hover {
     transform: rotateY(180deg);
+  }
+  @media (min-width: ${smallScreen}) {
+    padding: 0 5rem;
+  }
+  @media (min-width: ${desktop}) {
+    padding: 0 3rem;
   }
 `;
 
@@ -44,6 +56,13 @@ const Overlay = styled.div`
   opacity: 0;
   transition: opacity 1s;
   transform: rotateY(180deg);
+  @media (min-width: ${smallScreen}) {
+    margin: 0 5rem;
+    width: auto;
+  }
+  @media (min-width: ${desktop}) {
+    margin: 0 3rem;
+  }
 
   &:hover {
     opacity: 1;
