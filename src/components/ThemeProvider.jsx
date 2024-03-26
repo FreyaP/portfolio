@@ -43,12 +43,15 @@ const LightBulbStyles = styled.img`
   }
 `;
 
-// State for theme, function to toggle the theme. Rendered in App.jsx with all components as children.
+// State for theme, function to toggle the theme.
+// Rendered in App.jsx with all components as children.
+
 const ThemeProvider = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState(
     localStorage.getItem("theme") || "light"
   );
 
+  // Theme pref. saved in localstorage
   useEffect(() => {
     localStorage.setItem("theme", currentTheme);
   }, [currentTheme]);

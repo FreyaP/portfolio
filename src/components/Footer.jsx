@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ContactIcons from "./ContactIcons";
 import { desktop } from "../styles/breakpoints";
+import { Link } from "react-router-dom";
 
 const DividerStyles = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.text};
@@ -14,7 +15,7 @@ const ContactHeader = styled.h2`
   font-weight: 300;
   text-align: center;
 `;
-const FooterHeader = styled.h3`
+const FooterHeader = styled(Link)`
   text-transform: uppercase;
   text-align: center;
   font-weight: 800;
@@ -32,7 +33,7 @@ export default function Footer() {
       <ContactHeader>Chat with me!</ContactHeader>
       <ContactIcons />
       <DividerStyles />
-      <FooterHeader>Freya Pearse</FooterHeader>
+      <FooterHeader to="/">Freya Pearse</FooterHeader>
       <CopyrightStyles>
         &#169; Copyright {`${new Date().getFullYear()}`} | All Rights Reserved{" "}
       </CopyrightStyles>

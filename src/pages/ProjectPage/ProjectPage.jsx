@@ -102,13 +102,13 @@ export default function ProjectPage() {
   const [index, setIndex] = useState(undefined);
 
   window.scrollTo({
-    top: 500,
+    top: 450,
     behavior: "smooth",
   });
 
   useEffect(() => {
     const foundProject = projects.find((project) => project.slug === slug);
-    setIndex(projects.indexOf(foundProject));
+    setIndex(projects.indexOf(foundProject)); //Used for the prev/next project
     setSelectedProject(foundProject);
   }, [slug]);
 
