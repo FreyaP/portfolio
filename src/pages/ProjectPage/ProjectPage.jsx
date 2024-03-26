@@ -124,7 +124,7 @@ export default function ProjectPage() {
               <ImageStyles
                 key={index}
                 width={index === 0 || index === 1 ? "mobile" : "desktop"}
-                src={`/src/assets/images${image}`}
+                src={`${image}`}
               />
             ))}
           </ImageContainer>
