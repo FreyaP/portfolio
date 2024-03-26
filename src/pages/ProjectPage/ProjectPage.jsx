@@ -1,23 +1,24 @@
 /* eslint-disable react/prop-types */
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import projects from "../../data/projects.json";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Footer from "../../components/Footer";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import { desktop } from "../../styles/breakpoints";
 
 const PageMargin = styled.div`
   margin: 3rem 1rem;
   @media (min-width: ${desktop}) {
-    margin: 3rem;
+    margin: 3rem 4rem;
   }
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  align-items: center;
 `;
 
 const TitleStyles = styled.h2`
@@ -30,10 +31,7 @@ const IconStyles = styled.img`
 `;
 const DividerStyles = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.text};
-  margin: 3rem 1rem;
-  @media (min-width: ${desktop}) {
-    margin: 3rem 0;
-  }
+  margin: 3rem 0;
 `;
 
 const DescriptionContainer = styled.div`
@@ -56,13 +54,24 @@ const LinkContainerStyles = styled.div`
 `;
 
 const LinkStyles = styled.a`
-  padding: 0.5rem 0;
+  font-weight: 600;
+  padding: 0.5rem;
   border-bottom: 2px solid ${({ theme }) => theme.background};
   transition: border-bottom 1s ease;
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.text};
     cursor: pointer;
   }
+  ${(props) =>
+    props.disabled &&
+    css`
+      color: grey;
+      font-weight: 200;
+      &:hover {
+        border-bottom: 2px solid ${({ theme }) => theme.background};
+        cursor: not-allowed;
+      }
+    `}
 `;
 
 const ImageContainer = styled.div`
@@ -81,18 +90,35 @@ const ImageStyles = styled.img`
   grid-column: span ${(props) => (props.width === "desktop" ? "2" : "1")};
 `;
 
+const ProjectNavContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+`;
+
 export default function ProjectPage() {
   const { slug } = useParams();
   const [selectedProject, setSelectedProject] = useState(undefined);
+  const [index, setIndex] = useState(undefined);
+
+  // window.scrollTo({
+  //   top: 0,
+  //   behavior: "smooth",
+  // });
 
   useEffect(() => {
-    setSelectedProject(projects.find((project) => project.slug === slug));
+    const foundProject = projects.find((project) => project.slug === slug);
+    setIndex(projects.indexOf(foundProject));
+    setSelectedProject(foundProject);
   }, [slug]);
 
-  if (selectedProject !== undefined) {
+  if (selectedProject !== undefined && index !== undefined) {
     return (
       <>
         <PageMargin>
+          <Link to="/">
+            <FaArrowLeft />
+          </Link>
           <TitleContainer>
             <TitleStyles>{selectedProject.title}</TitleStyles>
             <IconStyles src={selectedProject.logo} alt="Website logo" />
@@ -128,12 +154,44 @@ export default function ProjectPage() {
               />
             ))}
           </ImageContainer>
+          <ProjectNavContainer>
+            <LinkContainerStyles>
+              <FaArrowLeft />
+              <LinkStyles
+                disabled={
+                  `${projects[index - 1]?.slug}` === "undefined" ? true : false
+                }
+                href={
+                  `${projects[index - 1]?.slug}` === "undefined"
+                    ? "/"
+                    : `/projects/${projects[index - 1]?.slug}`
+                }
+              >
+                Previous project{" "}
+              </LinkStyles>
+            </LinkContainerStyles>
+            <LinkContainerStyles>
+              <LinkStyles
+                disabled={
+                  `${projects[index + 1]?.slug}` === "undefined" ? true : false
+                }
+                href={
+                  `${projects[index + 1]?.slug}` === "undefined"
+                    ? "/"
+                    : `/projects/${projects[index + 1]?.slug}`
+                }
+              >
+                Next project
+              </LinkStyles>
+              <FaArrowRight />
+            </LinkContainerStyles>
+          </ProjectNavContainer>
         </PageMargin>
         <Footer />
       </>
     );
   }
-  if (selectedProject === undefined) {
+  if (selectedProject === undefined || index === undefined) {
     return (
       <>
         <PageMargin>
