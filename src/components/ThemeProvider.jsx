@@ -4,7 +4,7 @@ import styled, {
   keyframes,
 } from "styled-components";
 import theme from "../styles/theme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import bulb from "../assets/images/bulb.png";
 
 const swing = keyframes`
@@ -45,7 +45,13 @@ const LightBulbStyles = styled.img`
 
 // State for theme, function to toggle the theme. Rendered in App.jsx with all components as children.
 const ThemeProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState(
+    localStorage.getItem("theme") || "light"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("theme", currentTheme);
+  }, [currentTheme]);
 
   const toggleTheme = () => {
     setCurrentTheme(currentTheme === "light" ? "dark" : "light");

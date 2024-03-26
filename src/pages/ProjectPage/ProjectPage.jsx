@@ -61,6 +61,7 @@ const LinkStyles = styled.a`
   transition: border-bottom 1s ease;
   &:hover {
     border-bottom: 2px solid ${({ theme }) => theme.text};
+    cursor: pointer;
   }
 `;
 
@@ -82,13 +83,13 @@ const ImageStyles = styled.img`
 
 export default function ProjectPage() {
   const { slug } = useParams();
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(undefined);
 
   useEffect(() => {
     setSelectedProject(projects.find((project) => project.slug === slug));
   }, [slug]);
 
-  if (selectedProject !== null) {
+  if (selectedProject !== undefined) {
     return (
       <>
         <PageMargin>
@@ -127,6 +128,19 @@ export default function ProjectPage() {
               />
             ))}
           </ImageContainer>
+        </PageMargin>
+        <Footer />
+      </>
+    );
+  }
+  if (selectedProject === undefined) {
+    return (
+      <>
+        <PageMargin>
+          <TitleStyles>Project not found</TitleStyles>
+          <LinkStyles onClick={() => setSelectedProject(projects[0])}>
+            Check out another project
+          </LinkStyles>
         </PageMargin>
         <Footer />
       </>
