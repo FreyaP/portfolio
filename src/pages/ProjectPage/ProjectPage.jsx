@@ -53,7 +53,7 @@ const LinkContainerStyles = styled.div`
   padding: 1rem 0;
 `;
 
-const LinkStyles = styled.a`
+const LinkStyles = styled(Link)`
   font-weight: 600;
   padding: 0.5rem;
   border-bottom: 2px solid ${({ theme }) => theme.background};
@@ -101,10 +101,10 @@ export default function ProjectPage() {
   const [selectedProject, setSelectedProject] = useState(undefined);
   const [index, setIndex] = useState(undefined);
 
-  // window.scrollTo({
-  //   top: 0,
-  //   behavior: "smooth",
-  // });
+  window.scrollTo({
+    top: 500,
+    behavior: "smooth",
+  });
 
   useEffect(() => {
     const foundProject = projects.find((project) => project.slug === slug);
@@ -140,9 +140,7 @@ export default function ProjectPage() {
           </DescriptionContainer>
           <LinkContainerStyles>
             <FaArrowRight />
-            <LinkStyles href={`${selectedProject.url}`}>
-              Check it out!
-            </LinkStyles>
+            <LinkStyles to={`${selectedProject.url}`}>Check it out!</LinkStyles>
           </LinkContainerStyles>
 
           <ImageContainer>
@@ -161,7 +159,7 @@ export default function ProjectPage() {
                 disabled={
                   `${projects[index - 1]?.slug}` === "undefined" ? true : false
                 }
-                href={
+                to={
                   `${projects[index - 1]?.slug}` === "undefined"
                     ? "/"
                     : `/projects/${projects[index - 1]?.slug}`
@@ -175,7 +173,7 @@ export default function ProjectPage() {
                 disabled={
                   `${projects[index + 1]?.slug}` === "undefined" ? true : false
                 }
-                href={
+                to={
                   `${projects[index + 1]?.slug}` === "undefined"
                     ? "/"
                     : `/projects/${projects[index + 1]?.slug}`
