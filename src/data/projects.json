@@ -3,6 +3,7 @@
     "title": "G&B Contracting",
     "description": "G&B Contracting is a custom website for a Whister based contracting company. The website lists the companies projects with a details page for each one. Prospective clients can get in touch through the online contact form.",
     "slug": "g-and-b-contracting",
+    "text": "Full stack custom website for a Whistler based Contracting company.",
     "work": "As a full stack developer, I designed and built the frontend user interface and also a backend to allow the client to update and make edits to the site independently.",
     "images": [
       "/g&b/G&B-Mobile-Home.png",
@@ -11,7 +12,7 @@
       "/g&b/G&B-Project-List.png",
       "/g&b/G&B-Single-Project.png"
     ],
-    "logo": "/src/assets/images/projects/gbLogo.png",
+    "logo": "/projects/gbLogo.png",
     "url": "https://www.gandbcontracting.com/",
     "techStack": ["Gatsby", "Styled Components", "Sanity", "GraphQL"]
   },
@@ -19,13 +20,14 @@
     "title": "sea to sky hotel",
     "description": "The Sea to Sky Hotel had a broken website that was not secure and would not allow online bookings. On top of this, they did not know or have any access to the where the site was hosted.",
     "slug": "sea-to-sky-hotel",
+    "text": "Brought a Squamish based hotel back online with a full stack website.",
     "work": "With a lot of detective work and research, I rebuilt and restored the website using Gatsby, including making it secure, fixing DNS issues, integrating a new email system, connecting the booking system and building a backend to allow the hotel to maintain the online content. ",
     "images": [
       "/s2s/S2S-Mobile-Home.png",
       "/s2s/S2S-Mobile-Home-2.png",
       "/s2s/S2S-Rooms.png"
     ],
-    "logo": "/src/assets/images/projects/s2sLogo.svg",
+    "logo": "/projects/s2sLogo.svg",
     "url": "https://seatoskyhotel.com/",
     "techStack": ["Gatsby", "Styled Components", "Sanity", "GraphQL"]
   },
@@ -33,6 +35,7 @@
     "title": "squamish events hub",
     "description": "Squamish Events Hub was a Capstone Project during my Web Devlopment Diploma program. It is a dynamic event sharing platform for event seekers and event organizers, where users can explore, create and save events to their individual profiles.",
     "slug": "squamish-events-hub",
+    "text": "Full stack passion project with database for an events platform.",
     "work": "This was a feature heavy project, including user auth allowing multiple users to register and use the platform. Pages are conditionally rendered depending on the user and logged in status. Events can be filtered by category, most popular and what's on at the weekend. Past events are removed, but remain visible to the host who can update their events inluding the image. This was a fun project that provided many learning opporunities (read: challenges!)",
     "images": [
       "/seh/SEH-Mobile-Login.png",
@@ -43,7 +46,7 @@
       "/seh/SEH-Video.gif"
     ],
     "video": "/seh/SEH-Video.gif",
-    "logo": "/src/assets/images/projects/seLogo.png",
+    "logo": "/projects/seLogo.png",
     "url": "https://github.com/FreyaP/squamish-events",
     "techStack": ["React", "Express", "Node", "MySql", "User Auth"]
   }

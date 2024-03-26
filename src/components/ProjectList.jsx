@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import SingleProject from "./SingleProject";
-import gbLogo from "../assets/images/projects/gbLogo.png";
-import s2sLogo from "../assets/images/projects/s2sLogo.svg";
-import seLogo from "../assets/images/projects/seLogo.png";
 import { desktop, tablet } from "../styles/breakpoints";
+import projects from "../data/projects.json";
 
 const ContainerStyles = styled.section`
   margin-top: 5rem;
@@ -36,24 +34,17 @@ export default function ProjectList() {
   return (
     <ContainerStyles>
       <LabelStyles>Some of my work...</LabelStyles>
-      <SingleProject
-        title="G&B Contracting"
-        logo={gbLogo}
-        text="Full stack custom website for a Whistler based Contracting company."
-        slug="g-and-b-contracting"
-      />
-      <SingleProject
-        title="Sea To Sky Hotel"
-        logo={s2sLogo}
-        text="Brought a Squamish based hotel back online with a full stack website."
-        slug="sea-to-sky-hotel"
-      />
-      <SingleProject
-        title="Squamish Events Hub"
-        logo={seLogo}
-        text="Full stack passion project with database for an events platform."
-        slug="squamish-events-hub"
-      />
+      {projects.map((project, index) => {
+        return (
+          <SingleProject
+            key={index}
+            title={project.title}
+            logo={project.logo}
+            text={project.text}
+            slug={project.slug}
+          />
+        );
+      })}
     </ContainerStyles>
   );
 }
