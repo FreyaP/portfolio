@@ -68,13 +68,11 @@ export default function ContactForm() {
       return;
     } else {
       try {
-        const myForm = e.target;
-        const formData = new FormData(myForm);
-        console.log(formData);
+        const formData = new FormData(e.target);
+
         fetch("/", {
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
+          body: formData,
         }).then(() => console.log("Form successfully submitted"));
       } catch (error) {
         console.log(error);
@@ -85,10 +83,11 @@ export default function ContactForm() {
   return (
     <FormStyles
       name="Contact Freya"
+      method="POST"
       data-netlify="true"
-      method="post"
       onSubmit={handleSubmit}
     >
+      <input type="hidden" name="Contact Freya" value="contact" />
       <label htmlFor="name">Name:</label>
       <InputStyles
         type="text"
