@@ -87,7 +87,7 @@ export default function ContactForm() {
       data-netlify="true"
       onSubmit={handleSubmit}
     >
-      <input type="hidden" name="Contact Freya" value="contact" />
+      <input type="hidden" name="form-name" value="Contact Freya" />
       <label htmlFor="name">Name:</label>
       <InputStyles
         type="text"
