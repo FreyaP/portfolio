@@ -17,11 +17,11 @@ const ContainerStyles = styled.section`
   }
 `;
 const LabelStyles = styled.h4`
-  font-weight: 300;
+  font-weight: 600;
   font-size: 3rem;
   margin-top: 3rem;
   text-align: center;
-  text-transform: capitalize;
+
   @media (min-width: ${tablet}) {
     grid-column: span 2;
   }
@@ -33,7 +33,7 @@ const LabelStyles = styled.h4`
 export default function ProjectList() {
   return (
     <ContainerStyles>
-      <LabelStyles>Some of my work...</LabelStyles>
+      <LabelStyles>Explore some projects</LabelStyles>
       {projects.map((project, index) => {
         return (
           <SingleProject

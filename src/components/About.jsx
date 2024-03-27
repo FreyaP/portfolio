@@ -5,15 +5,22 @@ import { desktop } from "../styles/breakpoints";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
   @media (min-width: ${desktop}) {
     margin: 0 3rem;
   }
 `;
 
 const TaglineStyles = styled.h3`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 200;
-  padding-left: 1rem;
+  text-transform: uppercase;
+  line-height: 2.5rem;
+  padding: 1.5rem 0;
+`;
+const NameStyles = styled.span`
+  font-weight: 500;
+  font-size: 2.5rem;
 `;
 
 const LabelStyles = styled.h4`
@@ -24,8 +31,6 @@ const LabelStyles = styled.h4`
 `;
 const DividerStyles = styled.div`
   border-bottom: 2px solid ${({ theme }) => theme.text};
-  margin-left: 1rem;
-  margin-right: 1rem;
 `;
 
 export default function About() {
@@ -34,7 +39,11 @@ export default function About() {
       <LabelStyles>_aboutMe</LabelStyles>
       <ContactIcons />
       <DividerStyles />
-      <TaglineStyles>ABOUT ME TAGLINE... MAYBE A SENTENCE.</TaglineStyles>
+      <TaglineStyles>
+        Hey there! I'm <NameStyles>Freya</NameStyles>, your go-to full-stack web
+        developer based in the beautiful Sea To Sky, BC. Let me take you on a
+        whimsical journey through my world of coding!
+      </TaglineStyles>
       <DividerStyles />
     </Container>
   );

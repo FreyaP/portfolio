@@ -32,7 +32,7 @@ const ThumbnailContainer = styled.div`
 const TitleStyles = styled.h5`
   font-size: 2rem;
   text-align: center;
-  font-weight: 900;
+  font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1rem;
 `;
@@ -69,7 +69,7 @@ const Overlay = styled.div`
   }
 `;
 const RevealedText = styled.p`
-  font-weight: 200;
+  font-weight: 600;
   color: ${({ theme }) => theme.background};
   padding: 0.5rem;
   text-align: center;

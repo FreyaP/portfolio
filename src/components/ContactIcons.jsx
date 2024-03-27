@@ -1,13 +1,12 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import styled from "styled-components";
-import { desktop } from "../styles/breakpoints";
 
 const IconContainerStyles = styled.section`
   display: flex;
-  padding: 2rem;
+  padding: 2rem 0;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 2rem;
 `;
 const IconLinkStyles = styled.a`
