@@ -72,7 +72,12 @@ export default function ContactForm() {
   };
 
   return (
-    <FormStyles name="contact" netlify onSubmit={handleSubmit}>
+    <FormStyles
+      name="Contact Freya"
+      data-netlify="true"
+      method="post"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="name">Name:</label>
       <InputStyles
         type="text"
